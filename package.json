@@ -1,0 +1,25 @@
+{
+  "name": "covidus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "express-session": "^1.17.1",
+    "express-validator": "^5.3.0",
+    "mkdirp": "^1.0.4",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.9",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "serve-favicon": "^2.5.0"
+  }
+}
