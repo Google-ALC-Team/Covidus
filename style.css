@@ -1,0 +1,32 @@
+.col-sm-2{
+    background-color: aqua;
+    padding-bottom: 110px;
+    border: solid 1px black;
+    margin: 5px;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+.col-sm-2 p{
+    text-align: center;
+
+}
+
+.col-sm-3{
+    float: right;
+    background-color: aqua;
+    padding-bottom: 100px;
+    border: solid 1px black;
+    margin: 5px;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+div.card{
+    margin: 3%;
+    float: left;
+    
+
+}
+
+
+    
