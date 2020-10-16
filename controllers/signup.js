@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const passport = require('passport');
 const config = require('../config')
 
 
@@ -63,6 +64,14 @@ module.exports = {
 
       
     },
-    facebookAuth:function(req,res)
+    
+    facebookAuth:passport.authenticate('facebook',{
+        scope:email
+    }),
+    callback:passport.authenticate('facebook',{
+        successRedirect:'/user',
+        failureRedirect:'/login'
+    })
+
 
 }
