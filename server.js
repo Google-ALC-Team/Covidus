@@ -4,6 +4,7 @@ const path = require('path')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 dotenv.config({ path:'./config.env'});
+const configure = require('./server/configure')
 
 
 // MONGO DB ENVIRONMENTAL VARIABLE
@@ -17,11 +18,9 @@ mongoose.connection.once('open', function(){
 })
 
 
-app.get('/',function(req,res){
-    res.json({
-        name:"name"
-    })
-})
+
+configure(app)
+
 
 // APP LISTENING AT PORT:4000
 const port = app.get('port')
