@@ -1,117 +1,134 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar
-      :clipped-left="clipped"
-      fixed
-      app
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
+  <v-app dark class="airbnb">
+    <v-app-bar flat :clipped-left="clipped" fixed app class="accent">
+      <div>
+        <span v-if="small" class="airbnb-black text-15"> Covidus </span>
+        <span v-else class="airbnb-black text-20"> Covidus </span>
+      </div>
       <v-spacer />
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
+      <div v-if="!small" class="d-flex flex-row">
+        <v-list
+          class="d-flex flex-row accent mr-4"
+          v-for="item in items"
+          :key="item"
+        >
+          <v-list-item router exact :to="item.to">
+            <v-list-item-content>
+              <v-list-item-title class="text-15">{{
+                item.title
+              }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </div>
+      <div v-if="small" class="d-flex flex-row">
+        <v-btn
+          color="accent"
+          class="text-capitalize py-6"
+          depressed
+          to="/signin"
+        >
+          <span class="airbnb-medium primary--text text-15">Login</span>
+        </v-btn>
+        <v-btn
+          color="secondary"
+          class="text-capitalize py-5 mt-1"
+          depressed
+          to="/signup"
+        >
+          <span class="airbnb-medium text-15">Sign Up</span>
+        </v-btn>
+
+        <v-menu offset-y>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn color="primary" dark icon v-bind="attrs" v-on="on">
+              <v-icon>mdi-menu</v-icon>
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item
+              v-for="(item, index) in items"
+              :key="index"
+              :to="item.to"
+            >
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </div>
+      <div v-else>
+        <v-btn
+          color="accent"
+          class="text-capitalize py-6 px-11"
+          depressed
+          to="/signin"
+        >
+          <span class="airbnb-medium primary--text text-15">Login</span>
+        </v-btn>
+        <v-btn
+          color="secondary"
+          class="text-capitalize py-6 px-11"
+          depressed
+          to="/signup"
+        >
+          <span class="airbnb-medium">Sign Up</span>
+        </v-btn>
+      </div>
     </v-app-bar>
-    <v-main>
-      <v-container>
-        <nuxt />
-      </v-container>
+    <v-main class="airbnb">
+      <nuxt />
     </v-main>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
     <v-footer
       :absolute="!fixed"
       app
+      class="airbnb white d-flex justify-center pa-4"
     >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span v-if="small" class="text-10">
+        Developed by the Google Andela Scholarship Team Web-02
+      </span>
+      <span v-else>
+        Developed by the Google Andela Scholarship Team Web-02
+      </span>
     </v-footer>
   </v-app>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       clipped: false,
       drawer: false,
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
+          title: 'Share Your Story',
+          to: '/contact',
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
+          title: 'Information Board',
+          to: '/contact',
+        },
+        {
+          title: 'Donate',
+          to: '/',
+        },
+        {
+          title: 'Contact',
+          to: '/contact',
+        },
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Covidus',
     }
-  }
+  },
+  computed: {
+    small() {
+      return this.$vuetify.breakpoint.smAndDown
+    },
+  },
 }
 </script>
+

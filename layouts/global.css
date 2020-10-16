@@ -1,0 +1,118 @@
+@font-face {
+  font-family: 'Airbnb';
+  src: local('Airbnb'), url(~assets/fonts/AirbnbCerealBook.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Airbnb Light';
+  src: local('Airbnb Light'),
+    url(~assets/fonts/AirbnbCerealLight.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Airbnb Medium';
+  src: local('Airbnb Medium'),
+    url(~assets/fonts/AirbnbCerealMedium.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Airbnb Bold';
+  src: local('Airbnb Bold'),
+    url(~assets/fonts/AirbnbCerealBold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Airbnb Extra Bold';
+  src: local('Airbnb Extra Bold'),
+    url(~assets/fonts/AirbnbCerealExtraBold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Airbnb Black';
+  src: local('Airbnb Black'),
+    url(~assets/fonts/AirbnbCerealBlack.woff) format('woff');
+}
+
+html,
+body {
+  font-family: 'Airbnb' !important;
+}
+
+.airbnb {
+  font-family: 'Airbnb' !important;
+}
+
+.airbnb-light {
+  font-family: 'Airbnb Light' !important;
+}
+
+.airbnb-medium {
+  font-family: 'Airbnb Medium' !important;
+}
+
+.airbnb-bold {
+  font-family: 'Airbnb Bold' !important;
+}
+
+.airbnb-extra-bold {
+  font-family: 'Airbnb Extra Bold' !important;
+}
+
+.airbnb-black {
+  font-family: 'Airbnb Black' !important;
+}
+
+.app {
+  font-family: 'Airbnb' !important;
+}
+
+.text-10 {
+  font-size: 10px !important;
+}
+
+.text-12 {
+  font-size: 12px !important;
+}
+
+.text-15 {
+  font-size: 15px !important;
+}
+
+.text-20 {
+  font-size: 20px !important;
+}
+
+.text-25 {
+  font-size: 25px !important;
+}
+
+.text-30 {
+  font-size: 30px !important;
+}
+
+.text-35 {
+  font-size: 35px !important;
+}
+.text-40 {
+  font-size: 40px !important;
+}
+
+.width-60 {
+  width: 60%;
+}
+
+.width-80 {
+  width: 80%;
+}
+.width-95 {
+  width: 95%;
+}
+.fill-width {
+  width: 100% !important;
+}
+
+.social-circle {
+  border-radius: 50%;
+  min-height: 50px !important;
+  min-width: 50px !important;
+}
