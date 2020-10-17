@@ -11,6 +11,7 @@ const passport = require('passport')
 
 const dotenv = require('dotenv')
 const mainRoute = require('../routes/index')
+const setPassport = require('./passport')
 
 
 
@@ -27,6 +28,7 @@ module.exports = function(app){
     }));
     app.use(passport.initialize());
     app.use(passport.session());
+    setPassport()
     app.use(expressValidator())
 
     global.User = require('../models/user')

@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 const passport = require('passport');
 const config = require('../config')
+const facebookStrategy = require('passport-facebook').Strategy
 
 
 
@@ -64,9 +65,16 @@ module.exports = {
 
       
     },
+    login:function(req,res){
+        passport.authenticate('local-login',{
+            successRedirect:'/user',
+            failureRedirect:"/login"
+        })
+
+    },
     
     facebookAuth:passport.authenticate('facebook',{
-        scope:email
+        scope:"email"
     }),
     callback:passport.authenticate('facebook',{
         successRedirect:'/user',

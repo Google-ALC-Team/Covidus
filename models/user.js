@@ -16,14 +16,14 @@ let UserSchema = new Schema({
     },
     country:{
         type:String,
-        required:true;
+        required:true
     },
     password:{
         type:String
     },
     dateCreated:{
         type:Date,
-        "default":DataCue.now()
+        "default":Date.now()
     }
 
     
