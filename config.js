@@ -3,7 +3,7 @@ module.exports = {
         service:'Gmail',
         auth: {
             user: '',
-            pass:""
+            pass:"e"
         }
     },
     dbconnection:'mongodb://127.0.0.1:27017/code4share',

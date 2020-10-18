@@ -1,10 +1,15 @@
-/node_modules/
-config.env
 
 config.js
+server.js
+/node_modules
+
+
+
+*.env
 
 # Prerequisites
 *.d
+
 
 # Object files
 *.o
