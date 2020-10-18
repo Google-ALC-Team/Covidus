@@ -12,6 +12,7 @@ const passport = require('passport')
 const dotenv = require('dotenv')
 const mainRoute = require('../routes/index')
 const setPassport = require('./passport')
+const expressHandlebars = require('express-handlebars')
 
 
 
@@ -34,6 +35,13 @@ module.exports = function(app){
     global.User = require('../models/user')
 
     app.use('/',mainRoute)
+
+    app.engine('handlebars', expressHandlebars.create({
+        'defaultLayout':'main',
+        'layoutsDir':app.get('views') + '/layouts'
+    }).engine)
+    // app.set('views', path.join(__dirname, 'views'));
+    app.set('view engine', 'handlebars');
 
 
     return app

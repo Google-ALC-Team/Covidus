@@ -18,15 +18,16 @@ mongoose.connection.once('open', function(){
 })
 
 
-
-configure(app)
-
-
-// APP LISTENING AT PORT:4000
 const port = app.get('port')
 app.listen(process.env.PORT || 4000, function () {
     console.log(`app listening at port: `)
 })
+
+configure(app)
+app.set('views', __dirname + '/views' )
+
+// APP LISTENING AT PORT:4000
+
 
 
 

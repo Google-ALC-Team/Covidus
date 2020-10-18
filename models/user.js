@@ -6,17 +6,17 @@ let saltRound = 10;
 
 
 let UserSchema = new Schema({
-    fullname:{
+    name:{
         type:String,
-        required:true
+        // required:true
     },
     email:{
         type:String,
-        required:true
+        // required:true
     },
     country:{
         type:String,
-        required:true
+        // required:true
     },
     password:{
         type:String
@@ -24,6 +24,12 @@ let UserSchema = new Schema({
     dateCreated:{
         type:Date,
         "default":Date.now()
+    },
+    facebookid:{
+        type:String
+    },
+    googleid:{
+        type:String
     }
 
     

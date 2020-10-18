@@ -2,6 +2,7 @@ const nodemailer = require('nodemailer');
 const passport = require('passport');
 const config = require('../config')
 const facebookStrategy = require('passport-facebook').Strategy
+const userSchema = require('../models/user')
 
 
 
@@ -20,11 +21,11 @@ module.exports = {
 
         if(errors){
             res.json(errors);
-            console.log(error)
+            console.log(errors)
         }else{
-            user.findOne({email:req.bdoy.email}, function(err,user){
+            userSchema.findOne({email:req.body.email}, function(err,user){
                 if(err){
-                    throw err
+                    res.send(err)
                 }if(user){
                     res.send('User with the Email Already Exist')
                 }else{
@@ -79,7 +80,15 @@ module.exports = {
     callback:passport.authenticate('facebook',{
         successRedirect:'/user',
         failureRedirect:'/login'
+    }),
+    googleAuth:passport.authenticate('google', {
+        scope:['profile','email']
+    }),
+    googleCallback:passport.authenticate('google',{
+        successRedirect:'/user',
+        failureRedirect:'/login'
     })
+
 
 
 }
