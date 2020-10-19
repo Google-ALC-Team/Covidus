@@ -5,6 +5,8 @@ config.js
 
 config.js
 
+views
+
 *.env
 
 # Prerequisites
