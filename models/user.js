@@ -30,7 +30,10 @@ let UserSchema = new Schema({
     },
     googleid:{
         type:String
-    }
+    },
+    nofications:[],
+    vidoes:[]
+    
 
     
 })

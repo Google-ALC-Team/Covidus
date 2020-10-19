@@ -33,6 +33,7 @@ module.exports = function(app){
     app.use(expressValidator())
 
     global.User = require('../models/user')
+    global.Video = require('../models/Video')
 
     app.use('/',mainRoute)
 

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router()
 const signup = require('../controllers/signup')
+const video = require('../controllers/video')
 
 
 
@@ -17,6 +18,7 @@ router.get('/auth/facebook', signup.facebookAuth);
 router.get('/auth/facebook/callback',signup.callback)
 router.get('/auth/google',signup.googleAuth)
 router.get('/auth/google/callback',signup.googleCallback)
+router.post('/postVideo/:id', video.videoupload)
 
 
 
