@@ -1,0 +1,76 @@
+/* generic */
+body{
+    background-color: aliceblue;
+}
+form input {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+.lighten{
+    color: #8f8e8e;
+    font-style: italic;
+}
+.center{
+    text-align: center;
+}
+.justify{
+    text-align: justify;
+}
+h1{
+    text-align: center;
+}
+h1,h3{
+    color:#191963
+}
+
+/* header */
+
+header{
+    height: 450px;
+    padding:50px;
+}
+header section{
+    margin-top:30px;
+}
+
+/* main content */
+main section{
+    margin-bottom: 30px;
+}
+.table td, .table th {
+    padding-left: 1em;
+    border-top: none;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table-header{
+    background-color: rgb(247, 222, 222);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 20px;
+}
+.table-header thead td, .table-header thead th {
+    border: none;
+}
+.table-body{
+    background-color: white;
+    height: 500px;
+    overflow-y: scroll;
+}
+/* footer */
+footer{
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+footer .dev-by{
+    text-align: center;
+    padding-left: 200px;
+}
+footer aside p{
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+/* section coded by pstarlyk */
