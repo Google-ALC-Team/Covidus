@@ -1,0 +1,236 @@
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add a background color and some padding around the form */
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 60px;
+  }
+
+main{
+  margin: 120px;
+}
+
+  span {
+      height: 20px;
+      width: 60px;
+  }
+
+  .header h1{
+     color: #020753d7;
+     text-align: center;
+     font-size: 60px;
+  }
+  .header p{
+    text-align: center;
+    font-size: 25px;
+  }
+
+  button{
+    width: 170px;
+    height: 40px;
+    left: 660px;
+    position: relative;
+    margin: auto;
+    color: white;
+    border-radius: 5px;
+     background-color: #020753d7;
+  }
+
+  .contact{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 150px;
+      margin-left: 80px;
+      padding: 20PX;
+      line-height: 30px;
+      
+  
+  }
+  .contact i{
+    padding: 30px;
+  }
+  
+
+  footer{
+      text-align: center;
+      width: 50%;
+      margin-top: 50px;
+      margin-left: 200px;
+    
+  }
+  footer a {
+      color: white;
+      font-size: 20px;
+      background-color: #00bd92;
+      padding: 10px;
+  }
+
+  
+
+
+  /* @edia */
+  @media only screen and (min-width: 320px) and (max-width: 479px){
+    .header h1{
+      color: #020753d7;
+      font-size: 50px;
+
+    }
+
+    .contact{
+      display: grid;
+      gap: 0px;
+      
+    }
+
+    .main{
+      margin: 5px;
+    }
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+    }
+
+    footer{
+      text-align: center;
+      width: 60%;
+      margin-top: 30px;
+      margin-left: 60px;
+    
+  }
+
+  button{
+    width: 170px;
+    height: 40px;
+    left: 4px;
+    position: relative;
+    margin: auto;
+    color: white;
+    border-radius: 5px;
+     background-color: #020753d7;
+  }
+
+
+
+  }
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+ 
+  .header h1{
+    color: #020753d7;
+    font-size: 50px;
+
+  }
+
+  .contact{
+    display: grid;
+    gap: 0px;
+    text-align: center;
+    
+  }
+
+  .main{
+    margin: 10px;
+  }
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+  }
+
+  footer{
+    text-align: center;
+    width: 60%;
+    margin-top: 30px;
+
+  
+}
+
+button{
+  width: 170px;
+  height: 40px;
+  left: 30px;
+  position: relative;
+  margin: auto;
+  color: white;
+  border-radius: 5px;
+   background-color: #020753d7;
+}
+
+
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+
+  .header h1{
+    color: #020753d7;
+    font-size: 50px;
+
+  }
+
+  .contact{
+    display: grid;
+    gap: 0px;
+    text-align: center;
+    
+  }
+
+  .main{
+    margin: 10px;
+  }
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+  }
+
+  footer{
+    text-align: center;
+    width: 60%;
+    margin-top: 30px;
+
+  
+}
+
+button{
+  width: 170px;
+  height: 40px;
+  left: 100px;
+  position: relative;
+  margin: auto;
+  color: white;
+  border-radius: 5px;
+   background-color: #020753d7;
+}
+
+
+
+}
+@media only screen and (min-width: 992px){ 
+
+}
+  
