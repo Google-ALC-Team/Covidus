@@ -1,0 +1,121 @@
+* {
+    
+} 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Airbnb Cereal App Regular';
+    background-color: #f7f7f7;
+}
+main {
+  
+}
+.container {
+    background-image: url(../images/bg.png);
+    background-position: center;
+    background-size: auto;
+    max-width: 100%;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+}
+.content {
+    position: absolute;
+    width: 60%;
+    text-align: center;
+    padding-top: 12%;
+    background-color: none;
+}
+.content h1 {
+    font-family: 'Airbnb Cereal App Black';
+    font-size: 3em;
+    color: #1B1F6B;
+}
+.content p {
+    font-size: 0.8em;
+}
+#country {
+    width: 40%;
+    height: 50px;
+    margin-top: 3%;
+}
+
+.form p {
+    font-size: 0.7em;
+    color: #A897A5;
+}
+select {
+    outline: none;
+    border: none;
+    background-color: #F7F7F7;
+    color: #161618;
+    font-family: 'Airbnb Cereal App Regular';
+    padding: 10px;
+}
+button {
+    outline: none;
+    border: none;
+    padding: 1.5% 4%;
+    background-color: #1B1F6B;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: ease-in-out 300ms;
+}
+button:hover {
+    padding: 1.8% 4.5%;
+    background-color: #0b0d36;
+}
+button #button2 {
+    font-family: 'Airbnb Cereal App Regular';
+}
+#button2 img {
+    padding-left: 10px;
+}
+.search-result {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2%;;
+    border: 1px solid #eee;
+    background-color: #f7f7f7;
+}
+.search-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.search-container .header {
+    font-size: 1em;
+}
+.search-container .font-size {
+    font-size: 0.7em;
+}
+.search-container span {
+    color: #F26187;
+}
+.pay-now {
+    background-color: #00BD92;
+    margin: 2%;
+}
+footer {
+    font-size: 0.9em;
+    text-align: center;
+    font-style: normal;
+    color: #412645;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .content  {
+        width: 90%;
+        padding-top: 20%;
+    }
+    .content h1 {
+        font-size: 2em;
+    }
+    #country {
+        width: 70%;
+        height: 50px;
+        margin-top: 3%;
+    }
+} 
