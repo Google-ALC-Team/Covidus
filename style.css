@@ -1,0 +1,123 @@
+/* generic */
+
+body{
+    background-color: aliceblue;
+    min-width: 280px;
+}
+/* navbar */
+
+h1{
+    color: #1B1F6B;
+}
+
+header nav{
+    height: 60px;
+    background-color: #fff;
+}
+.navbar-light .navbar-brand{
+    color: #1B1F6B;
+    font-weight: bolder;
+}
+.navbar-light .navbar-nav .nav-link{
+    padding-left: 10px;
+    font-weight: 500;
+    color: #1B1F6B;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    font-size: 1.05em;
+    border-radius: 5px;
+    color:#fff;
+    background: #F26187;
+}
+
+.navbar-light .nav-item .sign-up{
+    color: #F26187;
+}
+.navbar-light .navbar-nav .btn{
+    color:white;
+    background-color: #F26187;
+    max-width: 100px;
+}
+.navbar-light .navbar-nav .btn:hover{
+    font-size: 1.05em;
+}
+@media (min-width: 992px){
+    
+    .nav-item{
+        padding-right: 10px;
+    }
+    .sign-up{
+        margin-left:50px;
+        
+    }
+}
+
+/* navbar dropdown style */
+@media (max-width: 991px){
+    .navbar-collapse {
+      position: fixed;
+      top: 60px; 
+      bottom: 0;
+      left: 100%;
+      width: 40%;
+      visibility: hidden;
+      background-color: #fff;
+      transition: visibility .2s ease-in-out, -webkit-transform .2s ease-in-out;
+      max-height: 100%;
+      border-top: 2px solid #f8d8e1;
+    }
+    .navbar-collapse.show {
+      visibility: visible;
+      transform: translateX(-100%);
+    }
+    header nav ul{
+        padding-top: 10px;
+    }
+    header nav ul li{
+        padding-left: 20px;
+    }
+  }
+
+  @media (max-width:767px){
+    .navbar-collapse {
+        width: 60%;
+    }
+  }
+
+/* header */
+header{
+    margin-top: 60px;
+}
+
+.col-sm-2{
+    background-color: aqua;
+    padding-bottom: 110px;
+    border: solid 1px black;
+    margin: 5px;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+.col-sm-2 p{
+    text-align: center;
+
+}
+
+.col-sm-3{
+    float: right;
+    background-color: aqua;
+    padding-bottom: 100px;
+    border: solid 1px black;
+    margin: 5px;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+div.card{
+    margin: 3%;
+    float: left;
+    
+
+}
+
+
+    
