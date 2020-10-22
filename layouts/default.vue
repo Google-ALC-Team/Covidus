@@ -78,11 +78,7 @@
     <v-main class="airbnb">
       <nuxt />
     </v-main>
-    <v-footer
-      :absolute="!fixed"
-      app
-      class="airbnb white d-flex justify-center pa-4"
-    >
+    <v-footer :absolute="!fixed" app class="airbnb d-flex justify-center pa-4">
       <span v-if="small" class="text-10">
         Developed by the Google Andela Scholarship Team Web-02
       </span>
