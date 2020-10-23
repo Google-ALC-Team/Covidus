@@ -2,6 +2,7 @@ let mongoose = require('mongoose')
 let Schema = mongoose.Schema;
 let bcrypt = require('bcrypt');
 let saltRound = 10;
+var ObjectId = Schema.ObjectId
 
 
 
@@ -32,7 +33,15 @@ let UserSchema = new Schema({
         type:String
     },
     nofications:[],
-    vidoes:[]
+    videos: [
+    {
+        _id:String,
+        content:String,
+        filename:String,
+        title:String
+
+    }
+]
     
 
     

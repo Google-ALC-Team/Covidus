@@ -13,6 +13,7 @@ const dotenv = require('dotenv')
 const mainRoute = require('../routes/index')
 const setPassport = require('./passport')
 const expressHandlebars = require('express-handlebars')
+ const multer = require('multer')
 
 
 
@@ -22,11 +23,15 @@ module.exports = function(app){
     dotenv.config({ path:'../config.env'}); // environ variable configuration 
     app.use(bodyParser.urlencoded({extended:true}));
     app.use(bodyParser.json());
-    app.use(session({
+
+    app.use(multer({dest: './public/upload/temp'}).single('file')); /// enables image uploads
+    app.use('/public/', express.static(path.join(__dirname ,'../public'))); 
+     app.use(session({
         secret:process.env.SECRETE,
         resave:true,
         saveUninitialized:true
     }));
+    app.use('/public/', express.static(path.join(__dirname ,'../public'))); 
     app.use(passport.initialize());
     app.use(passport.session());
     setPassport()

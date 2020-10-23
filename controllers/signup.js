@@ -52,7 +52,7 @@ module.exports = {
                                     return console.log(error)
                                 }
                                 console.log(info)
-                                res.send('registered')
+                                res.json({message:'Account registered successfully'})
                             })
 
                             
