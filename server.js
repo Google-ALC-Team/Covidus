@@ -24,8 +24,8 @@ app.listen(process.env.PORT || 4000, function () {
 })
 
 configure(app)
-
 app.set('views', __dirname + '/views' )
+
 
 // APP LISTENING AT PORT:4000
 

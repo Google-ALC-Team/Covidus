@@ -13,13 +13,40 @@ const dotenv = require('dotenv')
 const mainRoute = require('../routes/index')
 const setPassport = require('./passport')
 const expressHandlebars = require('express-handlebars')
- const multer = require('multer')
+const multer = require('multer')
+const cors = require('cors')
 
+
+const swaggerjsdoc = require('swagger-jsdoc')
+const swaggerUi = require('swagger-ui-express')
+const swaggerOptions = {
+    swaggerDefinition: {
+        
+        info: {
+            title: 'Covidus Api',
+            description: 'Covidus Api documentation',
+            contact: {
+                servers: ["http://localhost:4000"]
+            }
+        }
+    },
+    // path to the api docs
+    apis: ["../routes/index.js"]
+}
+const document = require('../swagger.json')
+
+
+//const swaggerDocs = swaggerjsdoc(swaggerOptions)
 
 
 
 module.exports = function(app){
+
+
+
+    
     app.use(morgan('dev')) // logging agent
+    app.use(cors())
     dotenv.config({ path:'../config.env'}); // environ variable configuration 
     app.use(bodyParser.urlencoded({extended:true}));
     app.use(bodyParser.json());
@@ -39,8 +66,13 @@ module.exports = function(app){
 
     global.User = require('../models/user')
     global.Video = require('../models/Video')
+    global.Contact = require('../models/contact')
 
+    
+   
     app.use('/',mainRoute)
+    app.use('/api',swaggerUi.serve, swaggerUi.setup(document))
+    
 
     app.engine('handlebars', expressHandlebars.create({
         'defaultLayout':'main',

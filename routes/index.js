@@ -7,15 +7,20 @@ var fileSystem = require('fs')
 var  { getVideoDuration}  = require('get-video-duration');
 const { request } = require('http');
 var path = require('path')
-
+const os = require('os')
+const controller = require('../controllers/contact')
+// const swaggerjsdoc = require('swagger-jsdoc')
+// const swaggerUi = require('swagger-ui-express')
+// const app = require('express')
 
 
 
 // home route
-router.get('/', function(req,res){
-    res.render('home')
-})
+router.get('/home', function(req,res){
+   
+    res.json({os:os})
 
+})
 
 router.route('/login')
 
@@ -36,6 +41,11 @@ router.get('/auth/google/callback',signup.googleCallback)
 // post route  for  video file upload 
 router.post('/postVideo', video.videoupload)
 
+// route for contact
+ router.get('/contact',function(req,res){
+     res.json({title:"contact"})
+ })
+router.post('/contact/sendMessage', controller.contact)
 
 
 
