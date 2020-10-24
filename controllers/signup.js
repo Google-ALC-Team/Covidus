@@ -87,7 +87,16 @@ module.exports = {
     googleCallback:passport.authenticate('google',{
         successRedirect:'/user',
         failureRedirect:'/login'
+    }),
+    twitterAuth:passport.authenticate('twitter',{
+        scope:"email"
+    }),
+    twitterCallBack:passport.authenticate('twitter',{
+        successRedirect:'/user',
+        failureRedirect:'/'
     })
+
+
 
 
 

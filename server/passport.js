@@ -129,7 +129,19 @@ module.exports = function(){
             return done(err, user)
           })
       }
-      ))
+      ));
+
+      passport.use(new TwitterStrategy({
+        consumerKey: TWITTER_CONSUMER_KEY,
+        consumerSecret: TWITTER_CONSUMER_SECRET,
+        callbackURL: "http:4000/auth/twitter/callback"
+      },
+      function(token, tokenSecret, profile, cb) {
+        User.findOrCreate({ twitterId: profile.id }, function (err, user) {
+          return cb(err, user);
+        });
+      }
+    ));
     
 }
 

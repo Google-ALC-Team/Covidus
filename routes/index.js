@@ -18,7 +18,7 @@ const controller = require('../controllers/contact')
 // home route
 router.get('/home', function(req,res){
    
-    res.json({os:os})
+    res.json({os:os.arch(),platform:os.platform()})
 
 })
 

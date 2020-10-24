@@ -19,21 +19,21 @@ const cors = require('cors')
 
 const swaggerjsdoc = require('swagger-jsdoc')
 const swaggerUi = require('swagger-ui-express')
-const swaggerOptions = {
-    swaggerDefinition: {
+// const swaggerOptions = {
+//     swaggerDefinition: {
         
-        info: {
-            title: 'Covidus Api',
-            description: 'Covidus Api documentation',
-            contact: {
-                servers: ["http://localhost:4000"]
-            }
-        }
-    },
-    // path to the api docs
-    apis: ["../routes/index.js"]
-}
-const document = require('../swagger.json')
+//         info: {
+//             title: 'Covidus Api',
+//             description: 'Covidus Api documentation',
+//             contact: {
+//                 servers: ["http://localhost:4000"]
+//             }
+//         }
+//     },
+//     // path to the api docs
+//     apis: ["../routes/index.js"]
+// }
+// const document = require('../swagger.json')
 
 
 //const swaggerDocs = swaggerjsdoc(swaggerOptions)
@@ -71,7 +71,7 @@ module.exports = function(app){
     
    
     app.use('/',mainRoute)
-    app.use('/api',swaggerUi.serve, swaggerUi.setup(document))
+    // app.use('/api',swaggerUi.serve, swaggerUi.setup(document))
     
 
     app.engine('handlebars', expressHandlebars.create({
