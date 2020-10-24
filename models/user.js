@@ -40,8 +40,13 @@ let UserSchema = new Schema({
         filename:String,
         title:String
 
+    }   
+    ],
+    resetLink: {
+        data:String,
+        default:''
     }
-]
+
     
 
     

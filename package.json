@@ -18,6 +18,8 @@
     "express-validator": "^5.3.0",
     "formidable": "^1.2.2",
     "get-video-duration": "^3.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
     "mkdirp": "^1.0.4",
     "moment": "^2.29.1",
     "mongoose": "^5.10.9",

@@ -9,6 +9,8 @@ const { request } = require('http');
 var path = require('path')
 const os = require('os')
 const controller = require('../controllers/contact')
+const passwordReset = require('../controllers/forgotPass');
+const { forgotPassword } = require('../controllers/forgotPass');
 // const swaggerjsdoc = require('swagger-jsdoc')
 // const swaggerUi = require('swagger-ui-express')
 // const app = require('express')
@@ -46,6 +48,13 @@ router.post('/postVideo', video.videoupload)
      res.json({title:"contact"})
  })
 router.post('/contact/sendMessage', controller.contact)
+
+// twitter auth routes
+router.get('twiiter/auth',signup.twitterAuth)
+router.get('/auth/twitter/callback',signup.twitterCallBack)
+
+// password reset 
+router.put('/forgot-password', forgotPassword)
 
 
 
