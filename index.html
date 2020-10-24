@@ -3,109 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="j.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Covidus</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- added font awesome -->
+    <script src="https://kit.fontawesome.com/961a376fb3.js" crossorigin="anonymous"></script>
+    <!-- added my css -->
+    <link rel="stylesheet" type="text/css" href="./index.css">
 </head>
 <body>
-    <div class="container-sm">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-            <a class="navbar-brand" href="index.html">Covidus</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Share Your Story</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="/info-board.html">Information Board</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Donate</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link sign-up" href="#">Sign Up</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link btn" href="#">Login</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-    <header >
-        <h1>Covid-19 Travelling <br>Guide App.</h1>
-        <p class="text-sm-left">
-            An Information platform that helps international travellers navigate<br>
-            their way with travel requirements during the Covid-19 Pandemic within<br>
-            the African Continent.
-        </p>
-        <button type="button" class="btn btn-danger">Search Guide For Country </button>
-        <button type="button" class="btn btn-danger">Share your Story </button>
-    </header>
-    <div class="row" style="width: 105%;">
-        <div class="col-sm-2" >
-            <p >holl</p>
-        </div>
-        <div class="col-sm-2">
-            <p>holl</p>
-        </div>
-        <div class="col-sm-2">
-            <p>holl</p>
-        </div>
-        <div class="col-sm-2">
-            <p>holl</p>
-        </div>
-        <div class="col-sm-2">
-            <p>holl</p>
-        </div>
-    </div>
-
-        <div class="row">
-            <h2 class="float-left">Get started on Covidus</h2>
-        </div>
-
-    <div class="card" style="width:18rem">
-    <img class="card-img-top" src="images.jpg" alt="Card image" style="width:100%">
-    <div class="card-body">
-        <h4 class="card-title">Share your survival story</h4>
-        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-        <a href="#" class="btn btn-primary">See Profile</a>
-        <a href="#" class="btn btn-light">See Profile</a>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="./index.html">Covidus</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         
-    </div>
-    </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Share Your Story</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./info-board.html">Information Board</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Donate</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
 
-    <div class="card" style="width:18rem">
-        <img class="card-img-top" src="images.jpg" alt="Card image" style="width:100%;">
-        <div class="card-body">
-            <h4 class="card-title">Information Board For travellers</h4>
-            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-            <a href="#" class="btn btn-primary">See Profile</a>
-            <a href="#" class="btn btn-light">See Profile</a>
+            <li class="nav-item">
+                <a class="nav-link sign-up" href="#">Sign Up</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn" href="/">Login</a>
+            </li>
+            </ul>
         </div>
-    </div>
+    </nav>
+    <header class="container-fluid" data-toggle="collapse" data-target=".show#navbarSupportedContent">
+        <section class="row">
+            <section class="col-lg-6">
+                <div class="header-content">
+                    <h1>Covid-19 Travelling Guide App.</h1>
+                    <p>
+                        An Information platform that helps international travellers navigate
+                        their way with travel requirements during the Covid-19 Pandemic within
+                        the African Continent.
+                    </p>
+                    <div class="button-div">
+                        <button type="button" class="btn search-guide">Search Guide For Country </button>
+                        <button type="button" class="btn share-story">
+                            <i class="fas fa-play-circle fa-2x"></i>
+                            <span>Share Your Story</span>
+                        </button>
+                    </div>
+                </div>    
+            </section>
+            <div class="col-lg-6">
 
-    <div class="card" style="width:18rem">
-        <img class="card-img-top img-fluid" src="images.jpg" alt="Card image" style="width:100%">
-        <div class="card-body">
-            <h4 class="card-title">Donate Via GoFundMe</h4>
-            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-            <a href="#" class="btn btn-primary">See Profile</a>
-            <a href="#" class="btn btn-light">See Profile</a>
-        </div>
-    </div>
+            </div>
+        </section>
+    </header>
+    <main  data-toggle="collapse" data-target=".show#navbarSupportedContent">
+        <section class="container-fluid protective-measures">
+            <h5><i class="fas fa-head-side-mask"></i> <span>Approved Protective Measures</span></h5>
+            <div class="row">
+                <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+                    <article class="card">
+                        <img src="./images/homepage/hand-washing.png" alt="washing-hands" class="card-img-top">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                Wash Your Hands  
+                            </h6>
+                            <p class="card-text">
+                                Clean your hands often. Use soap and water, or an alcohol-based hand rub.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+                    <article class="card">
+                        <img src="./images/homepage/masked-face.png" alt="masked-face" class="card-img-top">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                Wear a mask
+                            </h6>
+                            <p class="card-text">
+                                Wear a mask when physical distancing is not possible.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+                    <article class="card">
+                        <img src="./images/homepage/hand-washing.png" alt="washing-hands" class="card-img-top">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                Keep a safe distance
+                            </h6>
+                            <p class="card-text">
+                                Maintain a safe distance from anyone who is coughing or sneezing.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+                    <article class="card">
+                        <img src="./images/homepage/hand-washing.png" alt="washing-hands" class="card-img-top">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                Avoid Crowded Spaces
+                            </h6>
+                            <p class="card-text">
+                                Avoid crowded spaces such as open markets, crowded supermarkets and pharmacies
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+                    <article class="card">
+                        <img src="./images/homepage/hand-washing.png" alt="washing-hands" class="card-img-top">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                Seek Medical Attention
+                            </h6>
+                            <p class="card-text">
+                                If you have a fever, cough and difficulty breathing, seek medical attention.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid get-started">
+            <h3>Get Started On Covidus</h3>
+            <div class="row">
+                <section class="col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top" src="./images/homepage/get-started-1.png" alt="get-started-img">
+                        <article class="card-body">
+                            <h5 class="card-title">
+                                Share Your Survival Story
+                            </h5>
+                            <p class="card-text">
+                                Clean your hands often. Use soap and water, or an alcohol-based hand rub.
+                            </p>
+                            <div>
+                                <button class="btn card-btn-1"><span>Upload Video</span> <i class="fas fa-file-upload"></i></button>
+                                <button class="btn card-btn-2"><i class="fas fa-tv"></i> <span>Watch Others Survival Story</span></button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                <section class="col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top" src="./images/homepage/get-started-2.png" alt="get-started-img">
+                        <article class="card-body">
+                            <h5 class="card-title">
+                                Information Board For Travellers
+                            </h5>
+                            <p class="card-text">
+                                Find travel requirement for each African country (such as required number of days of Covid test,Airport Covid19 protocols, amount charged for Covid19 test in each country.
+                            </p>
+                            <div>
+                                <button class="btn card-btn-1"><span>Search By Country</span> <i class="fas fa-search"></i></button>
+                                <button class="btn card-btn-2"><i class="fas fa-tv"></i> <span>All Countries Guide</span></button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                <section class="col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top" src="./images/homepage/get-started-3.png" alt="get-started-img">
+                        <article class="card-body">
+                            <h5 class="card-title">
+                                Donate Via GoFundMe
+                            </h5>
+                            <p class="card-text">
+                                Donate via gofund me account for your preffered country to help those travelling to their country of origin but cannot afford to pay for the test before entrance.
+                            </p>
+                            <div>
+                                <button class="btn donate-btn"><span>Donate Today</span> <i class="fas fa-donate"></i></button>
+                                <button class="btn card-btn-2"><i class="fas fa-people-carry"></i> <span>Need Help Paying For Test?</span></button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <section class="container-fluid survival-stories">
+            <section class="row">
+                <h3 class="col-md-12 col-xl-6">
+                    Covid-19 Survival Stories Feeds
+                </h3>
+                <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3">                
+                    <button class="btn btn-1">
+                        <span>Browse by: Country of Survival </span>
+                        <i class="fas fa-caret-down"></i>
+                    </button>
+                </div>
+                <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+                    <button class="btn btn-2">
+                        <span>Share Your Own Survival Story </span>
+                        <i class="fas fa-file-upload"></i>
+                    </button>
+                </div>
+            </section>
+            <section class="row">
+                <section class="col-sm-6 col-lg-4">
+                    <div class="story div-bg-1">
+                        <p>How I got infected in a hair salon</p>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-lg-4">
+                    <div class="story div-bg-2">
+                        <p>I beat Covid-19 at Age 50</p>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-lg-4">
+                    <div class="story div-bg-3">
+                        <p>My family remain my Covid-19 Hero</p>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-lg-4">
+                    <div class="story div-bg-1">
+                        <p>How I got infected in a hair salon</p>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-lg-4">
+                    <div class="story div-bg-2">
+                        <p>I beat Covid-19 at Age 50</p>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-lg-4">
+                    <div class="story div-bg-3">
+                        <p>My family remain my Covid-19 Hero</p>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-lg-4">
+                    <div class="story div-bg-1">
+                        <p>How I got infected in a hair salon</p>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-lg-4">
+                    <div class="story div-bg-2">
+                        <p>I beat Covid-19 at Age 50</p>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-lg-4">
+                    <div class="story div-bg-3">
+                        <p>My family remain my Covid-19 Hero</p>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-lg-4">
+                    <div class="story div-bg-1">
+                        <p>How I got infected in a hair salon</p>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-lg-4">
+                    <div class="story div-bg-2">
+                        <p>I beat Covid-19 at Age 50</p>
+                    </div>
+                </section>
+                <section class="col-sm-6 col-lg-4">
+                    <div class="story div-bg-3">
+                        <p>My family remain my Covid-19 Hero</p>
+                    </div>
+                </section>
+            </section>
+            <div>
+                <button class="more-videos btn">
+                    Load more videos
+                </button>
+            </div>
+        </section>
+    </main>
+    <footer class="container-fluid row" data-toggle="collapse" data-target=".show#navbarSupportedContent">
+        <p class="col-12 col-md-3"></p>
+        <p class="col-12 col-md-6 dev-by">
+            Developed by the Google Andela Scholarship Team Web-02
+        </p>
+        <aside class="col-12 col-md-3">
+            <p>Help us get more people to be tested.</p>
+            <button class="btn">Donate Today <i class="fas fa-donate"></i></button>
+        </aside>
+    </footer>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-</div>
+    <!-- section coded by pstarlyk -->
 </body>
 </html>
