@@ -9,7 +9,7 @@
 
 <script>
 import Side from '@/components/Auth/Side'
-import SignUp from '@/components/Auth/SignUp'
+import SignUp from '@/components/Auth/Signup'
 export default {
   components: {
     Side,

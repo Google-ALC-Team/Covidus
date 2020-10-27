@@ -12,7 +12,6 @@
           </span>
         </v-btn>
       </div>
-
       <v-spacer />
       <div v-if="!small" class="d-flex flex-row">
         <v-list
