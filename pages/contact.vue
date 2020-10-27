@@ -429,7 +429,7 @@ export default {
     link: [
       {
         rel: 'stylesheet',
-        href: '/contact.css',
+        href: '/css/contact.css',
       },
     ],
   },

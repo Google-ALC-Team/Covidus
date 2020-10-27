@@ -2,9 +2,17 @@
   <v-app dark class="airbnb">
     <v-app-bar flat :clipped-left="clipped" fixed app class="accent">
       <div>
-        <span v-if="small" class="airbnb-black text-15"> Covidus </span>
-        <span v-else class="airbnb-black text-20"> Covidus </span>
+        <v-btn to="/" color="accent" depressed>
+          <span v-if="small" class="airbnb-black primary--text text-15">
+            Covidus
+          </span>
+
+          <span v-else class="airbnb-black primary--text text-20">
+            Covidus
+          </span>
+        </v-btn>
       </div>
+
       <v-spacer />
       <div v-if="!small" class="d-flex flex-row">
         <v-list
@@ -78,19 +86,19 @@
     <v-main class="airbnb">
       <nuxt />
     </v-main>
-    <v-footer :absolute="!fixed" app class="airbnb d-flex justify-center pa-4">
-      <span v-if="small" class="text-10">
-        Developed by the Google Andela Scholarship Team Web-02
-      </span>
-      <span v-else>
-        Developed by the Google Andela Scholarship Team Web-02
-      </span>
-    </v-footer>
+    <footer-one v-if="logged" />
+    <footer-two v-else />
   </v-app>
 </template>
 
 <script>
+import FooterOne from '@/components/FooterOne'
+import FooterTwo from '@/components/FooterTwo'
 export default {
+  components: {
+    FooterOne,
+    FooterTwo,
+  },
   data() {
     return {
       clipped: false,
@@ -107,7 +115,7 @@ export default {
         },
         {
           title: 'Donate',
-          to: '/',
+          to: '/donate',
         },
         {
           title: 'Contact',

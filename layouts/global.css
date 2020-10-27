@@ -101,6 +101,9 @@ body {
   width: 60%;
 }
 
+.width-70 {
+  width: 70%;
+}
 .width-80 {
   width: 80%;
 }
@@ -111,8 +114,64 @@ body {
   width: 100% !important;
 }
 
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+
 .social-circle {
   border-radius: 50%;
   min-height: 50px !important;
   min-width: 50px !important;
+}
+/* HOMEPAGE CSS */
+/* Top right text */
+
+.home-top-containers {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Top right text */
+.home-top-right {
+  right: 4px;
+}
+
+.home-top-left {
+  left: 4px;
+}
+
+.home-tips {
+  top: 18%;
+  left: 30px;
+}
+
+.home-tips-mobile {
+  top: 60px;
+  left: 5px;
+}
+
+.home-tips-measure {
+  top: 15px;
+  right: 20px;
+}
+.home-tips-card {
+  width: 260px;
+  height: 230px;
+}
+
+.home-tips-card-mobile {
+  width: 300px;
+  height: 250px;
+}
+.footer-two {
+  background-image: url(~assets/bg.png);
+  background-position: center;
+  background-size: auto;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
 }
