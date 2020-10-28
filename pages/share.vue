@@ -50,11 +50,11 @@
                 <p>Drag and drop a video</p>
                 <p>OR</p>
                 <br />
-                <div>
+                <div class="fill-width">
                   <input
                     type="file"
                     name="browse"
-                    class="white pa-4"
+                    class="white ml-2 py-4"
                     required
                   />
                 </div>
