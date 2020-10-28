@@ -1,0 +1,33 @@
+Hello Team 
+
+Kindly find the project roles below.
+All team members are advised to please fill in their role of interest before the end of business today.
+
+Project Manager - Vivian Egwu
+
+Cloud services - Abdul Basari
+
+Frontend integration into Vue - Nerdstack.
+
+
+Homepage Frontend - Michael
+Homepage Backend - Izy
+
+Donate Frontend - Dimeji
+Donate Backend - 
+
+Contact Frontend - Isaac
+Contact Backend - 
+
+Login/Signup Frontend - NerdStack
+Login/Signup Backend -
+
+Information Board Frontend -
+
+Information Board Backend -
+
+
+
+
+
+https://www.figma.com/proto/uTP05M7nynaz2pZ8jlVzSK/Covidus-User-Interface-Design?node-id=11%3A4&scaling=scale-down-width
