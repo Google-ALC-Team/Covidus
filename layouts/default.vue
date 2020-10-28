@@ -54,6 +54,7 @@
           </template>
           <v-list>
             <v-list-item
+              class="primary--text"
               v-for="(item, index) in items"
               :key="index"
               :to="item.to"

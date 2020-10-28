@@ -26,11 +26,14 @@ input[type='submit']:hover {
   background-color: #45a049;
 }
 
+.form-color {
+  background-color: #f2f2f2;
+}
+
 /* Add a background color and some padding around the form */
 .container {
   border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 60px;
+  padding: 40px 10%;
 }
 
 main {
@@ -88,7 +91,6 @@ button {
   }
   .container {
     border-radius: 5px;
-    background-color: #f2f2f2;
   }
 
   button {
@@ -120,7 +122,6 @@ button {
   }
   .container {
     border-radius: 5px;
-    background-color: #f2f2f2;
   }
 
   button {
@@ -152,7 +153,6 @@ button {
   }
   .container {
     border-radius: 5px;
-    background-color: #f2f2f2;
   }
 
   button {

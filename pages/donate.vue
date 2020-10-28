@@ -1,5 +1,5 @@
 <template>
-  <main class="container">
+  <div class="d-flex justify-center" style="mb-16">
     <div class="content">
       <span class="airbnb-bold text-40 primary--text"
         >Help Us Get More People Tested For Covid-19?</span
@@ -9,53 +9,80 @@
         travellers who can't pay for test. Your kindness is someone’s hope!
       </p>
 
-      <div class="form">
-        <form>
-          <select id="country" name="country">
-            <option value="Select">Select Your Country of Origin</option>
-            <option value="Nigeria">Nigeria</option>
-            <option value="Ghana">Ghana</option>
-            <option value="Rwanda">Rwanda</option>
-            <option value="Egypt">Egypt</option>
-          </select>
-        </form>
-        <p>
-          Note that you will be donating to your country of origin to help pay
-          people who cannot afford the Covid-19 PCR test fee.
-        </p>
+      <div class="form d-flex justify-center">
+        <div :class="`${selectsize} d-flex flex-column`">
+          <v-select
+            :items="['Nigeria', 'Ghana', 'Rwanda', 'Egypt']"
+            label="Select Your Country of Origin"
+            solo
+            v-model="country"
+            color="primary"
+            class="white px-2 py-0 ma-0"
+          ></v-select>
+          <p class="text-15">
+            Note that you will be donating to your country of origin to help pay
+            people who cannot afford the Covid-19 PCR test fee.
+          </p>
+        </div>
       </div>
 
-      <button id="button">
+      <button class="py-2" id="button">
         <span id="button2"
-          >Get Country Donation Link<img src="/svg/donation.svg" width="18px"
+          >Get Country Donation Link<img src="/svg/donation.svg" width="32px"
         /></span>
       </button>
 
-      <div class="search-result" id="result">
-        <div class="search-container">
+      <v-row class="airbnb d-flex mt-5 accent" v-if="country">
+        <v-col cols="12" md="4">
           <div class="country">
-            <h3 class="header">Country</h3>
-            <p class="country-name font-size">Rwanda</p>
+            <span class="airbnb-bold text-20 primary--text">Country</span>
+            <p class="airbnb-bold text-15">{{ country }}</p>
           </div>
+        </v-col>
+        <v-col cols="12" md="4">
           <div class="donation-link">
-            <h3 class="header">Covid-19 Donation Links</h3>
-            <p class="link-title font-size">
-              <span>Rwanda Covid-19 GoFundMe Account: </span
-              >https://gofundme.com/rwanda-covid-19
+            <span class="airbnb-bold text-20 primary--text"
+              >Covid-19 Donation Links</span
+            >
+            <p class="link-title font-size secondary--text">
+              {{ country }} Covid-19 GoFundMe Account:<br />
+              <a
+                :href="`https://gofundme.com/${country.toLowerCase()}-covid-19`"
+                target="_blank"
+              >
+                https://gofundme.com/{{ country.toLowerCase() }}-covid-19</a
+              >
             </p>
           </div>
-          <div class="donate-direct">
-            <h3 class="header">Donate Directly Now</h3>
-            <button class="pay-now">Click to Make Donation</button>
+        </v-col>
+        <v-col cols="12" md="4">
+          <div class="donate-direct d-flex flex-column">
+            <span class="airbnb-bold text-20 primary--text"
+              >Donate Directly Now</span
+            >
+            <div>
+              <v-btn
+                color="info"
+                class="text-capitalize py-6"
+                depressed
+                to="/donate"
+              >
+                <span class="airbnb">Make Donation </span>
+                <img src="/svg/donation.svg" width="32px" />
+              </v-btn>
+            </div>
           </div>
-        </div>
-      </div>
+        </v-col>
+      </v-row>
     </div>
-  </main>
+  </div>
 </template>
 
 <script>
 export default {
+  data: () => ({
+    country: '',
+  }),
   head: {
     title: 'Donate',
     link: [
@@ -64,6 +91,18 @@ export default {
         href: '/css/donation_style.css',
       },
     ],
+  },
+  computed: {
+    small() {
+      return this.$vuetify.breakpoint.smAndDown
+    },
+    selectsize() {
+      if (this.$vuetify.breakpoint.smAndDown) {
+        return 'width-80'
+      } else {
+        return 'width-60'
+      }
+    },
   },
 }
 </script>

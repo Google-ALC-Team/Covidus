@@ -2,22 +2,25 @@
   <main>
     <div class="header">
       <h1>Need Help Paying For Covid-19 PCR test fee?</h1>
-      <p>
+      <p class="text-20">
         Kindly fill out the form below to reach out to Covidus Support Team and
         await our reply within few minutes!
       </p>
     </div>
 
-    <div class="container">
-      <h2>Apply for Covid19 Help</h2>
-      <form action="action_page.php">
-        <label for="name">Name</label
+    <div class="container form-color">
+      <div class="d-flex text-center text-md-left mb-3">
+        <span class="airbnb-bold text-20">Apply for Covid-19 Help</span>
+      </div>
+
+      <form action="">
+        <label for="name" class="airbnb-bold">Name</label
         ><span style="color: red !important; display: inline; float: none"
           >*</span
         >
         <input type="text" id="name" name="name" placeholder="Your name.." />
 
-        <label for="country">Country of origin</label
+        <label for="country" class="airbnb-bold">Country of origin</label
         ><span style="color: red !important; display: inline; float: none"
           >*</span
         >
@@ -318,7 +321,7 @@
           <option value="Zimbabwe">Zimbabwe</option>
         </select>
 
-        <label for="email">Email Address</label
+        <label for="email" class="airbnb-bold">Email Address</label
         ><span style="color: red !important; display: inline; float: none"
           >*</span
         >
@@ -330,7 +333,7 @@
           required
         />
 
-        <label for="phone">Phone Number</label
+        <label for="phone" class="airbnb-bold">Phone Number</label
         ><span style="color: red !important; display: inline; float: none"
           >*</span
         >
@@ -342,7 +345,7 @@
           required
         />
 
-        <label for="subject"
+        <label for="subject" class="airbnb-bold"
           >Reason(s) why you cant pay for your PCR Covid19 Test?</label
         ><span style="color: red !important; display: inline; float: none"
           >*</span
@@ -356,8 +359,8 @@
         ></textarea>
 
         <span>
-          <p>International Passport</p>
-          <label for="lname">Evidence of Travel</label
+          <p class="airbnb-bold">Evidence of Travel</p>
+          <label for="lname">International Passport</label
           ><span style="color: red !important; display: inline; float: none"
             >*</span
           >
@@ -365,6 +368,8 @@
           <a href="drive.google.com" target="_blank">Google Drive</a>
           <a href="dropbox.com" target="_blank">Dropbox</a>
         </span>
+        <br />
+        <br />
         <hr />
         <br />
         <div class="d-flex justify-end">
@@ -379,46 +384,59 @@
         </div>
       </form>
     </div>
-
-    <section class="contact">
-      <p>
-        <i class="fa fa-phone" style="font-size: 35px; color: red"></i> <br />
-        Call Us <br />
-        +2348140192982
-      </p>
-
-      <p>
-        <i class="fa fa-envelope" style="font-size: 35px; color: red"></i>
-        <br />
-        Send us a mail<br />
-        help.covid19@covidus.com
-      </p>
-
-      <p>
-        <i class="fa fa-map-marker" style="font-size: 35px; color: red"></i>
-        <br />
-        Office Address<br />
-        Google Andela office, Africa
-      </p>
-    </section>
-    <section class="contact d-flex justify-center">
-      <div class="d-flex justify-center">
-        <div class="d-flex flex-column">
-          <p>Help us get more people tested.</p>
-          <br />
-          <div class="d-flex justify-center text-capitalize">
-            <v-btn
-              href="#donate"
-              large
-              color="primary"
-              class="px-10 text-capitalize"
-            >
-              Donate Today
-            </v-btn>
+    <div class="container">
+      <v-row>
+        <v-col>
+          <div class="d-flex justify-center text-center">
+            <div class="d-flex flex-column">
+              <v-icon color="secondary">mdi-phone-outline </v-icon>
+              <span class="airbnb-bold primary--text"> Call Us </span>
+              <span> +2348140192982 </span>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </v-col>
+        <v-col>
+          <div class="d-flex justify-center text-center">
+            <div class="d-flex flex-column">
+              <v-icon color="secondary">mdi-email </v-icon>
+              <span class="airbnb-bold primary--text"> Send us a mail </span>
+              <span> help.covid19@covidus.com </span>
+            </div>
+          </div>
+        </v-col>
+        <v-col>
+          <div class="d-flex justify-center text-center">
+            <div class="d-flex flex-column">
+              <v-icon color="secondary">mdi-google-maps </v-icon>
+              <span class="airbnb-bold primary--text"> Office Address </span>
+              <span> Google Andela office, Africa </span>
+            </div>
+          </div>
+        </v-col>
+      </v-row>
+      <v-row class="mt-10">
+        <v-col>
+          <div class="d-flex justify-center">
+            <div class="d-flex justify-center">
+              <div class="d-flex flex-column">
+                <p class="airbnb-bold">Help us get more people tested.</p>
+
+                <div class="d-flex justify-center text-capitalize">
+                  <v-btn
+                    href="#donate"
+                    large
+                    color="info"
+                    class="px-10 text-capitalize"
+                  >
+                    Donate Today <img src="/svg/donation.svg" width="30px" />
+                  </v-btn>
+                </div>
+              </div>
+            </div>
+          </div>
+        </v-col>
+      </v-row>
+    </div>
   </main>
 </template>
 
