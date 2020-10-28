@@ -40,6 +40,13 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxtjs/svg',
   ],
+  loading: { color: '#F26187' },
+
+  loadingIndicator: {
+    color: '#ffffff',
+    name: 'wandering-cubes',
+    background: '#F26187',
+  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [

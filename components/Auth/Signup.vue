@@ -14,7 +14,7 @@
               required
               solo
               flat
-              v-model="email"
+              v-model="name"
               class="white airbnb-bold text-25 pa-0 ma-0"
               style="height: 55px"
               :rules="[(v) => !!v || 'Email is required']"
@@ -106,6 +106,7 @@
 export default {
   data: () => ({
     countryData: '',
+    name: '',
     email: '',
     password: '',
     country: ['Nigeria', 'Others'],

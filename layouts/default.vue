@@ -107,7 +107,7 @@ export default {
       items: [
         {
           title: 'Share Your Story',
-          to: '/contact',
+          to: '/share',
         },
         {
           title: 'Information Board',
