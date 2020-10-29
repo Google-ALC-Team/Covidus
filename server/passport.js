@@ -6,6 +6,7 @@ const nodemailer = require('nodemailer')
 const config = require('../config')
 const UserModel = require('../models/user')
 const dotenv = require('dotenv')
+const TwitterStrategy = require('passport-twitter')
 
 
 
@@ -131,17 +132,17 @@ module.exports = function(){
       }
       ));
 
-      passport.use(new TwitterStrategy({
-        consumerKey: TWITTER_CONSUMER_KEY,
-        consumerSecret: TWITTER_CONSUMER_SECRET,
-        callbackURL: "http:4000/auth/twitter/callback"
-      },
-      function(token, tokenSecret, profile, cb) {
-        User.findOrCreate({ twitterId: profile.id }, function (err, user) {
-          return cb(err, user);
-        });
-      }
-    ));
+    //   passport.use(new TwitterStrategy({
+    //     consumerKey: TWITTER_CONSUMER_KEY,
+    //     consumerSecret: TWITTER_CONSUMER_SECRET,
+    //     callbackURL: "http:4000/auth/twitter/callback"
+    //   },
+    //   function(token, tokenSecret, profile, cb) {
+    //     User.findOrCreate({ twitterId: profile.id }, function (err, user) {
+    //       return cb(err, user);
+    //     });
+    //   }
+    // ));
     
 }
 

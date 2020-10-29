@@ -32,7 +32,22 @@ let UserSchema = new Schema({
     googleid:{
         type:String
     },
-    nofications:[],
+    
+    notifications:[{
+        message:{
+            type:String,
+            
+        },
+        timestamp:{
+            type:Date,
+            default:Date.now()
+        }
+
+    }],
+    totalnotification:{
+        type:Number,
+        default:0
+    },
     videos: [
     {
         _id:String,
@@ -45,7 +60,16 @@ let UserSchema = new Schema({
     resetLink: {
         data:String,
         default:''
-    }
+    },
+    resetPasswordToken: String,
+    resetPasswordExpires: Date,
+    activeToken: String,
+    activeExpires: Date,
+    isVerified:{
+        type:Boolean,
+        default:false
+    },
+
 
     
 

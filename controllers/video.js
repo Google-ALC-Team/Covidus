@@ -80,6 +80,18 @@ module.exports = {
                                             console.log('err for push', err)
                                         }else{
                                             console.log(success)
+                                            User.updateOne({email:req.user.email},{
+                                                $push:{"notifications":{
+                                                    message:'Your video was uploaded successfully'
+                                                }},
+                                                $inc:{totalnotification:1}
+                                            },function(err,data){
+                                                if(err){
+                                                    console.log('error for increment' ,err)
+                                                }else{
+                                                    console.log(data)
+                                                }
+                                            })
                                         }
                                     })
                                     res.redirect('/logged')

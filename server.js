@@ -23,8 +23,12 @@ app.listen(process.env.PORT || 4000, function () {
     console.log(`app listening at port: `)
 })
 
+const fs = require('fs')
+const file = fs.readFileSync('./controllers/template/email.handlebars','utf-8')
+
 configure(app)
 app.set('views', __dirname + '/views' )
+
 
 
 // APP LISTENING AT PORT:4000

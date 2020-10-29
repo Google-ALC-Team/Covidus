@@ -1,1 +1,209 @@
-{}
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters.",
+      "version": "1.0.0",
+      "title": "Swagger Petstore",
+      "termsOfService": "http://swagger.io/terms/",
+      "contact": {
+        "email": "apiteam@swagger.io"
+      },
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      }
+    },
+    "host": "localhost:4000",
+    "basePath": "/",
+
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/":{
+            "get":{
+                "tags":[
+                    "Root route"
+                ],
+                "summary":"get to home route",
+                "produces":[
+                    "application/json"
+                ],
+                "responses":{
+                    "200":{
+                        "description": "successful operation",
+                        "schema":{
+                            "$ref":"#/definition/home"
+                        }
+                    }
+                }
+            }
+        },
+        "/covid-info":{
+            "get":{
+                "tags": [
+                    "covid info"
+                ],
+                "description": "to get countries and their their covid restrictions",
+                "produces":[
+                    
+                    "application/json"
+                ],
+                "responses": {
+                    "200":{
+                        "description": "successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/Covid-info"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name":"limit",
+                        "schema":{
+                            "type":"number"
+                        },
+                        "description": "Query the number of data"
+                    },
+                    {
+                        "name":"search",
+                        "in": "query",
+                        "type": "string",
+                        "description": "A search query"
+                    }
+                    
+
+                ]
+            }
+
+        },
+        "/searchCovidInfo":{
+            "get": {
+                "tags": [
+                    "Covid search"
+                ],
+                "description": "Search for information that relates to covid-19 restriction in country and the search is based on country name which is /adm0_name/ any thing other than that will return empty",
+                "produces":[
+                    "application/json"
+                ],
+                "responses": {
+                    "200":{
+                        "description": "successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/Covid-infoh"
+                        }
+                    },
+                    "404":{
+                        "description": "failed operation"
+                    }
+                },
+                "parameters": [
+                
+                    {
+                        "name":"search",
+                        "in": "query",
+                        "type": "string",
+                        "description": "A search query"
+                    }
+                    
+
+                ]
+
+            }
+        },
+        "/more-video":{
+            "get":{
+                "tags": [
+                    "Get more videos"
+                ],
+                "description": "get more videos on click buuton",
+                "produces":[
+                    "application/json"
+                ],
+                "responses": {
+                    "200":{
+                        "description": " successfull response"
+                    }
+                   
+                }
+            }
+        },
+        "/postVideo":{
+            "post": {
+                "tags": [
+                    "videos upload"
+                ],
+                "description": "upload media with  extension of .mp4 .mp3 etc",
+                "produces":[
+                    "application/json"
+                ],
+                "responses": {
+                    "200":{
+                        "description": "image upload successfully",
+                        "schema":{
+                            "$ref":"#/definitions/Videoupload"
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+    },
+    "definitions": {
+        "home":{
+            "properties": {
+                "title":{
+                    "type":"string"
+                }
+            }
+        },
+        "Covid-info":{
+            "type":"object",
+            "properties": {
+               "adm0_name":{
+                   "type":"string"
+               },
+               "info":{
+                   "type":"string"
+               },
+               "iso3":{
+                   "type":"string"
+               },
+               "ObjectId":{
+                   "type":"string"
+               },
+               "optional1":{
+                   "type":"string"
+               },
+               "optional2":{
+                "type":"string"
+               },
+               "optional3":{
+                "type":"string"
+               },
+               "sources":{
+                   "type":"string"
+               }
+                  
+            }
+        },
+        "Videoupload":{
+            "type":"object",
+            "properties": {
+                "title":{
+                    "type":"string"
+                },
+                "content":{
+                    "type":"string"
+                },
+                "country":{
+                    "type":"string"
+                }
+            }
+        }
+
+    }
+}
