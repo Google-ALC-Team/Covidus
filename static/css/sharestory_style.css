@@ -84,8 +84,6 @@ button #button2 {
   transition: ease-in-out 500ms;
 }
 
-#upload .upload-box :hover {
-}
 .upload-box .upload-click {
   margin-top: 25%;
   padding: 5%;

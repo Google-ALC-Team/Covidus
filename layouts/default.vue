@@ -18,10 +18,11 @@
           class="d-flex flex-row accent mr-4"
           v-for="item in items"
           :key="item"
+          active-class="active-items"
         >
-          <v-list-item router exact :to="item.to">
+          <v-list-item router exact :to="item.to" active-class="active-items">
             <v-list-item-content>
-              <v-list-item-title class="text-15">{{
+              <v-list-item-title class="text-15 primary--text">{{
                 item.title
               }}</v-list-item-title>
             </v-list-item-content>
@@ -111,7 +112,7 @@ export default {
         },
         {
           title: 'Information Board',
-          to: '/contact',
+          to: '/information',
         },
         {
           title: 'Donate',
@@ -135,4 +136,10 @@ export default {
   },
 }
 </script>
+<style scoped>
+.active-items {
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+</style>
 

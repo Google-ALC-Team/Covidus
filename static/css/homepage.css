@@ -8,13 +8,47 @@ body {
   min-width: 300px;
 }
 
+.home-tips-card {
+  height: 100%;
+}
+.home-tips-content {
+  padding: 30% auto;
+}
+
+.home-top-bg {
+  background-image: url('/svg/home-top.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-top-bg-mobile {
+  background-image: url('/img/home-mobile.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
 .survival-bg {
   background-image: url('/svg/home-buttom-bg.svg');
-  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .survival-bg-mobile {
   background-color: #161618;
+}
+
+.tips-bg {
+  background-image: url('/svg/home-tips-bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tips-bg-mobile {
+  background-image: url('/img/measure-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
 nav {
@@ -224,7 +258,6 @@ main .protective-measures .col-6 {
   padding-bottom: 10px;
 }
 main .protective-measures .card {
-  height: 250px;
   background-color: #fff;
   color: #1b1f6b;
   border-radius: 10px;
@@ -342,16 +375,6 @@ main .survival-stories .story {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
-}
-main .survival-stories .story p {
-  width: 80%;
-  position: relative;
-  left: 40px;
-  top: 120px;
-  color: #f7f7f7;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 32px;
 }
 
 main .survival-stories .story.div-bg-1 {

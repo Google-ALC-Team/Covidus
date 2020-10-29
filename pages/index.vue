@@ -1,248 +1,268 @@
 <template>
-  <main class="accent">
-    <div class="relative d-flex justify-center">
-      <div
-        :class="`absolute home-top-left fill-height ${leftcontent} d-flex justify-center align-center`"
-      >
-        <div :class="`${leftcontent}`">
-          <div class="d-flex justify-center px-10 px-sm-16 px-md-0">
-            <div>
-              <span :class="`airbnb-black text-30 primary--text`"
-                >Covid-19 Travelling <br />
-                Guide App</span
-              >
+  <div class="accent">
+    <div :class="`${hometopbg} fill-width`">
+      <v-row>
+        <v-col cols="12" md="6">
+          <div
+            :class="`fill-height ${leftcontent} d-flex justify-center align-center`"
+          >
+            <div :class="`${leftcontent}`">
+              <div class="d-flex justify-center px-10 px-sm-16 px-md-0">
+                <div class="pl-5">
+                  <span :class="`airbnb-black text-30 primary--text`"
+                    >Covid-19 Travelling <br />
+                    Guide App</span
+                  >
 
-              <p class="airbnb-light text-15 white--text pt-2 pt-md-4">
-                An information platform that helps international travellers
-                navigate their way <br />
-                with travel requirements during the Covid19 Pandemic within the
-                African Continent.
-              </p>
-              <div>
-                <div class="d-flex flex-column flex-md-row">
-                  <v-btn
-                    color="primary"
-                    class="text-capitalize py-6 px-3 px-md-11"
-                    depressed
-                    to="/signup"
-                  >
-                    <span class="airbnb-light"> Search Guide For Country </span>
-                  </v-btn>
-                  <v-btn
-                    color="secondary"
-                    class="text-capitalize py-6 px-3 px-md-11 mt-3 mt-md-0"
-                    depressed
-                    to="/signin"
-                  >
-                    <img src="/svg/play-white.svg" height="50px" class="pr-2" />
-                    Share Your Story
-                  </v-btn>
+                  <p class="airbnb-light text-15 white--text pt-2 pt-md-4">
+                    An information platform that helps international travellers
+                    navigate their way <br />
+                    with travel requirements during the Covid19 Pandemic within
+                    the African Continent.
+                  </p>
+
+                  <v-row class="d-flex flex-column flex-md-row">
+                    <v-col>
+                      <v-btn
+                        color="primary"
+                        block
+                        class="text-capitalize py-6"
+                        depressed
+                        to="/signup"
+                      >
+                        <span class="airbnb-light">
+                          Search Guide For Country
+                        </span>
+                      </v-btn>
+                    </v-col>
+                    <v-col>
+                      <v-btn
+                        color="secondary"
+                        class="text-capitalize py-6 px-3 mt-3 mt-md-0"
+                        depressed
+                        block
+                        to="/signin"
+                      >
+                        <img
+                          src="/svg/play-white.svg"
+                          height="50px"
+                          class="pr-2"
+                        />
+                        Share Your Story
+                      </v-btn>
+                    </v-col>
+                  </v-row>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <img
-        v-if="small"
-        src="/img/home-mobile.png"
-        class="fill-width secondary"
-        height="400px"
-      />
-      <img v-else src="/svg/home-top.svg" class="fill-width" />
-
-      <img
-        v-if="!small"
-        src="/svg/home-top-right.svg"
-        height="90%"
-        class="absolute home-top-right pt-7 pt-md-5 pt-lg-16"
-      />
-    </div>
-
-    <div class="relative mb-16">
-      <div class="absolute home-tips-measure accent pa-2 rounded-pill">
-        <div class="mx-1">
-          <img src="/svg/measure-icon.svg" />
-          <span class="airbnb-bold text-12">Approved Protective Measures</span>
-        </div>
-      </div>
-      <v-row
-        :class="`pl-6 pl-md-2 pt-2 absolute ${hometips} d-flex justify-center fill-width`"
-      >
-        <v-col
-          cols="6"
-          md="2"
-          sm="4"
-          offset="1"
-          offset-sm="0"
-          class="pl-0 mx-sm-2 mx-md-4 mx-0"
-        >
-          <v-card
-            :class="`${cardheight} d-flex justify-center rounded-lg`"
-            flat
-          >
-            <div class="d-flex justify-center fill-width">
-              <div class="d-flex flex-column text-center">
-                <div class="mb-2">
-                  <img src="/images/homepage/hand-washing.png" width="120px" />
-                </div>
-                <div class="mb-2">
-                  <h6 class="airbnb text-15" style="color: #4f5cd3">
-                    Wash Your Hands
-                  </h6>
-                  <p class="airbnb-light text-15 mx-2 primary--text">
-                    Clean your hands often. Use soap and water, or an
-                    alcohol-based hand rub.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </v-card>
         </v-col>
-        <v-col
-          cols="6"
-          md="2"
-          sm="4"
-          offset="1"
-          offset-sm="0"
-          class="pl-0 mx-sm-2 mx-md-4 mx-0"
-        >
-          <v-card
-            :class="`${cardheight} d-flex justify-center rounded-lg`"
-            flat
+        <v-col cols="6" md="6" v-if="!small">
+          <div
+            class="pt-7 pt-md-5 pt-lg-16 fill-width d-flex justify-end"
+            style="height: 93%"
           >
-            <div class="d-flex justify-center fill-width">
-              <div class="d-flex flex-column text-center">
-                <div class="mb-2">
-                  <img src="/images/homepage/masked-face.png" width="120px" />
-                </div>
-                <div class="mb-2">
-                  <h6 class="airbnb text-15" style="color: #4f5cd3">
-                    Wear a mask
-                  </h6>
-                  <p class="airbnb-light text-15 mx-2 primary--text">
-                    Wear a mask when physical distancing is not possible.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </v-card>
-        </v-col>
-        <v-col
-          cols="6"
-          md="2"
-          sm="4"
-          offset="1"
-          offset-sm="0"
-          class="pl-0 mx-sm-2 mx-md-4 mx-0"
-        >
-          <v-card
-            :class="`${cardheight} d-flex justify-center rounded-lg`"
-            flat
-          >
-            <div class="d-flex justify-center fill-width">
-              <div class="d-flex flex-column text-center">
-                <div class="mb-2">
-                  <img src="/images/homepage/hand-washing.png" width="120px" />
-                </div>
-                <div class="mb-2">
-                  <h6 class="airbnb text-15" style="color: #4f5cd3">
-                    Keep a safe distance
-                  </h6>
-                  <p class="airbnb-light text-15 mx-2 primary--text">
-                    Maintain a safe distance from anyone who is coughing or
-                    sneezing.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </v-card>
-        </v-col>
-        <v-col
-          cols="6"
-          md="2"
-          sm="4"
-          offset="1"
-          offset-sm="0"
-          class="pl-0 mx-sm-2 mx-md-4 mx-0"
-        >
-          <v-card
-            :class="`${cardheight} d-flex justify-center rounded-lg`"
-            flat
-          >
-            <div class="d-flex justify-center fill-width">
-              <div class="d-flex flex-column text-center">
-                <div class="mb-2">
-                  <img src="/images/homepage/hand-washing.png" width="120px" />
-                </div>
-                <div class="mb-2">
-                  <h6 class="airbnb text-15" style="color: #4f5cd3">
-                    Avoid Crowded Spaces
-                  </h6>
-                  <p class="airbnb-light text-15 mx-2 primary--text">
-                    Avoid crowded spaces such as open markets and pharmacies
-                  </p>
-                </div>
-              </div>
-            </div>
-          </v-card>
-        </v-col>
-        <v-col
-          cols="6"
-          md="2"
-          sm="4"
-          offset="1"
-          offset-sm="0"
-          class="pl-0 mx-sm-2 mx-md-4 mx-0"
-        >
-          <v-card
-            :class="`${cardheight} d-flex justify-center rounded-lg`"
-            flat
-          >
-            <div class="d-flex justify-center fill-width">
-              <div class="d-flex flex-column text-center">
-                <div class="mb-2">
-                  <img src="/images/homepage/hand-washing.png" width="120px" />
-                </div>
-                <div class="mb-2">
-                  <h6 class="airbnb text-15" style="color: #4f5cd3">
-                    Seek Medical Attention
-                  </h6>
-                  <p class="airbnb-light text-15 mx-2 primary--text">
-                    If you have a fever, cough and difficulty breathing, seek
-                    medical attention.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </v-card>
+            <img src="/svg/home-top-right.svg" height="100%" />
+          </div>
         </v-col>
       </v-row>
-      <img
-        v-if="small"
-        src="/img/measure-bg.png"
-        class="fill-width"
-        height="900px"
-      />
-      <img
-        v-else
-        src="/svg/home-tips-bg.svg"
-        class="fill-width fill-height"
-        height="400px"
-      />
+    </div>
+
+    <div :class="`mb-16 ${tipsbg}`">
+      <div class="d-flex justify-center justify-md-end pt-7 pt-md-12 pr-2">
+        <div
+          class="px-1 accent pa-2 rounded-pill d-flex justify-center"
+          style="width: 250px"
+        >
+          <img src="/svg/measure-icon.svg" />
+          <span class="airbnb-bold text-12 pt-2"
+            >Approved Protective Measures</span
+          >
+        </div>
+      </div>
+      <div class="d-flex justify-center">
+        <v-row
+          class="home-tips-content pl-6 pl-md-2 pt-2 px-3 d-flex justify-center"
+        >
+          <v-col
+            cols="6"
+            md="2"
+            sm="4"
+            offset="1"
+            offset-sm="0"
+            class="pl-0 mx-sm-2 mx-md-4 mx-0"
+          >
+            <v-card
+              class="home-tips-card d-flex justify-center rounded-lg"
+              flat
+            >
+              <div class="d-flex justify-center fill-width">
+                <div class="d-flex flex-column text-center">
+                  <div class="mb-2">
+                    <img
+                      src="/images/homepage/hand-washing.png"
+                      width="120px"
+                    />
+                  </div>
+                  <div class="mb-2">
+                    <h6 class="airbnb text-15" style="color: #4f5cd3">
+                      Wash Your Hands
+                    </h6>
+                    <p class="airbnb-light text-15 mx-2 primary--text">
+                      Clean your hands often. Use soap and water, or an
+                      alcohol-based hand rub.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </v-card>
+          </v-col>
+          <v-col
+            cols="6"
+            md="2"
+            sm="4"
+            offset="1"
+            offset-sm="0"
+            class="pl-0 mx-sm-2 mx-md-4 mx-0"
+          >
+            <v-card
+              class="home-tips-card d-flex justify-center rounded-lg"
+              flat
+            >
+              <div class="d-flex justify-center fill-width">
+                <div class="d-flex flex-column text-center">
+                  <div class="mb-2">
+                    <img src="/images/homepage/masked-face.png" width="120px" />
+                  </div>
+                  <div class="mb-2">
+                    <h6 class="airbnb text-15" style="color: #4f5cd3">
+                      Wear a mask
+                    </h6>
+                    <p class="airbnb-light text-15 mx-2 primary--text">
+                      Wear a mask when physical distancing is not possible.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </v-card>
+          </v-col>
+          <v-col
+            cols="6"
+            md="2"
+            sm="4"
+            offset="1"
+            offset-sm="0"
+            class="pl-0 mx-sm-2 mx-md-4 mx-0"
+          >
+            <v-card
+              class="home-tips-card d-flex justify-center rounded-lg"
+              flat
+            >
+              <div class="d-flex justify-center fill-width">
+                <div class="d-flex flex-column text-center">
+                  <div class="mb-2">
+                    <img
+                      src="/images/homepage/hand-washing.png"
+                      width="120px"
+                    />
+                  </div>
+                  <div class="mb-2">
+                    <h6 class="airbnb text-15" style="color: #4f5cd3">
+                      Keep a safe distance
+                    </h6>
+                    <p class="airbnb-light text-15 mx-2 primary--text">
+                      Maintain a safe distance from anyone who is coughing or
+                      sneezing.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </v-card>
+          </v-col>
+          <v-col
+            cols="6"
+            md="2"
+            sm="4"
+            offset="1"
+            offset-sm="0"
+            class="pl-0 mx-sm-2 mx-md-4 mx-0"
+          >
+            <v-card
+              class="home-tips-card d-flex justify-center rounded-lg"
+              flat
+            >
+              <div class="d-flex justify-center fill-width">
+                <div class="d-flex flex-column text-center">
+                  <div class="mb-2">
+                    <img
+                      src="/images/homepage/hand-washing.png"
+                      width="120px"
+                    />
+                  </div>
+                  <div class="mb-2">
+                    <h6 class="airbnb text-15" style="color: #4f5cd3">
+                      Avoid Crowded Spaces
+                    </h6>
+                    <p class="airbnb-light text-15 mx-2 primary--text">
+                      Avoid crowded spaces such as open markets and pharmacies
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </v-card>
+          </v-col>
+          <v-col
+            cols="6"
+            md="2"
+            sm="4"
+            offset="1"
+            offset-sm="0"
+            class="pl-0 mx-sm-2 mx-md-4 mx-0"
+          >
+            <v-card
+              class="home-tips-card d-flex justify-center rounded-lg"
+              flat
+            >
+              <div class="d-flex justify-center fill-width">
+                <div class="d-flex flex-column text-center">
+                  <div class="mb-2">
+                    <img
+                      src="/images/homepage/hand-washing.png"
+                      width="120px"
+                    />
+                  </div>
+                  <div class="mb-2">
+                    <h6 class="airbnb text-15" style="color: #4f5cd3">
+                      Seek Medical Attention
+                    </h6>
+                    <p class="airbnb-light text-15 mx-2 primary--text">
+                      If you have a fever, cough and difficulty breathing, seek
+                      medical attention.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </v-card>
+          </v-col>
+        </v-row>
+      </div>
     </div>
 
     <section class="container-fluid get-started pl-2 pl-md-2">
-      <h3 class="airbnb-bold text-20">Get Started On Covidus</h3>
+      <div class="text-center text-md-left mx-3">
+        <span class="airbnb-bold text-20 primary--text"
+          >Get Started On Covidus</span
+        >
+      </div>
       <div class="row">
         <section class="col-lg-4 col-sm-6">
-          <div class="card">
+          <div class="mx-3">
             <div class="d-flex justify-center fill-width">
               <img
-                class="card-img-top"
+                class="card-img-top fill-height"
                 src="/images/homepage/get-started-1.png"
                 alt="get-started-img"
+                height="400px"
                 width="100%"
               />
             </div>
@@ -297,7 +317,7 @@
           </div>
         </section>
         <section class="col-lg-4 col-sm-6">
-          <div class="card">
+          <div class="mx-3">
             <div class="d-flex justify-center fill-width">
               <img
                 class="card-img-top"
@@ -357,7 +377,7 @@
           </div>
         </section>
         <section class="col-lg-4 col-sm-6">
-          <div class="card">
+          <div class="mx-3">
             <div class="d-flex justify-center fill-width">
               <img
                 class="card-img-top"
@@ -452,175 +472,24 @@
 
       <section class="fill-width">
         <v-row>
-          <v-col cols="12" md="4">
-            <div class="story div-bg-1 mb-7">
-              <div style="height: 100px !important">
-                <div class="d-flex justify-end pr-10 pt-6">
-                  <div>
-                    <v-img src="/svg/play.svg" height="35px" width="35px" />
-                  </div>
-                </div>
-                <div>
-                  <p>How I got infected in a hair salon</p>
-                </div>
-              </div>
-            </div>
-          </v-col>
-          <v-col cols="12" md="4">
-            <div class="story div-bg-2 mb-7">
-              <div style="height: 100px !important">
-                <div class="d-flex justify-end pr-10 pt-6">
-                  <div>
-                    <v-img src="/svg/play.svg" height="35px" width="35px" />
-                  </div>
-                </div>
-                <div>
-                  <p>I beat Covid-19 at Age 50</p>
-                </div>
-              </div>
-            </div>
-          </v-col>
+          <v-col cols="12" md="4" sm="6" v-for="n in 9" :key="n">
+            <div class="pa-5">
+              <video width="100%" controls>
+                <source
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  type="video/mp4"
+                />
+                <source
+                  src="https://www.w3schools.com/html/mov_bbb.ogg"
+                  type="video/ogg"
+                />
 
-          <v-col cols="12" md="4">
-            <div class="story div-bg-3 mb-7">
-              <div style="height: 100px !important">
-                <div class="d-flex justify-end pr-10 pt-6">
-                  <div>
-                    <v-img src="/svg/play.svg" height="35px" width="35px" />
-                  </div>
-                </div>
-                <div>
-                  <p>My family remain my Covid-19 Hero</p>
-                </div>
-              </div>
-            </div>
-          </v-col>
-          <v-col cols="12" md="4">
-            <div class="story div-bg-1 mb-7">
-              <div style="height: 100px !important">
-                <div class="d-flex justify-end pr-10 pt-6">
-                  <div>
-                    <v-img src="/svg/play.svg" height="35px" width="35px" />
-                  </div>
-                </div>
-                <div>
-                  <p>How I got infected in a hair salon</p>
-                </div>
-              </div>
-            </div>
-          </v-col>
-          <v-col cols="12" md="4">
-            <div class="story div-bg-2 mb-7">
-              <div style="height: 100px !important">
-                <div class="d-flex justify-end pr-10 pt-6">
-                  <div>
-                    <v-img src="/svg/play.svg" height="35px" width="35px" />
-                  </div>
-                </div>
-                <div>
-                  <p>I beat Covid-19 at Age 50</p>
-                </div>
-              </div>
-            </div>
-          </v-col>
-
-          <v-col cols="12" md="4">
-            <div class="story div-bg-3 mb-7">
-              <div style="height: 100px !important">
-                <div class="d-flex justify-end pr-10 pt-6">
-                  <div>
-                    <v-img src="/svg/play.svg" height="35px" width="35px" />
-                  </div>
-                </div>
-                <div>
-                  <p>My family remain my Covid-19 Hero</p>
-                </div>
-              </div>
-            </div>
-          </v-col>
-          <v-col cols="12" md="4">
-            <div class="story div-bg-1 mb-7">
-              <div style="height: 100px !important">
-                <div class="d-flex justify-end pr-10 pt-6">
-                  <div>
-                    <v-img src="/svg/play.svg" height="35px" width="35px" />
-                  </div>
-                </div>
-                <div>
-                  <p>How I got infected in a hair salon</p>
-                </div>
-              </div>
-            </div>
-          </v-col>
-          <v-col cols="12" md="4">
-            <div class="story div-bg-2 mb-7">
-              <div style="height: 100px !important">
-                <div class="d-flex justify-end pr-10 pt-6">
-                  <div>
-                    <v-img src="/svg/play.svg" height="35px" width="35px" />
-                  </div>
-                </div>
-                <div>
-                  <p>I beat Covid-19 at Age 50</p>
-                </div>
-              </div>
-            </div>
-          </v-col>
-
-          <v-col cols="12" md="4">
-            <div class="story div-bg-3 mb-7">
-              <div style="height: 100px !important">
-                <div class="d-flex justify-end pr-10 pt-6">
-                  <div>
-                    <v-img src="/svg/play.svg" height="35px" width="35px" />
-                  </div>
-                </div>
-                <div>
-                  <p>My family remain my Covid-19 Hero</p>
-                </div>
-              </div>
-            </div>
-          </v-col>
-          <v-col cols="12" md="4">
-            <div class="story div-bg-1 mb-7">
-              <div style="height: 100px !important">
-                <div class="d-flex justify-end pr-10 pt-6">
-                  <div>
-                    <v-img src="/svg/play.svg" height="35px" width="35px" />
-                  </div>
-                </div>
-                <div>
-                  <p>How I got infected in a hair salon</p>
-                </div>
-              </div>
-            </div>
-          </v-col>
-          <v-col cols="12" md="4">
-            <div class="story div-bg-2 mb-7">
-              <div style="height: 100px !important">
-                <div class="d-flex justify-end pr-10 pt-6">
-                  <div>
-                    <v-img src="/svg/play.svg" height="35px" width="35px" />
-                  </div>
-                </div>
-                <div>
-                  <p>I beat Covid-19 at Age 50</p>
-                </div>
-              </div>
-            </div>
-          </v-col>
-
-          <v-col cols="12" md="4">
-            <div class="story div-bg-3 mb-7">
-              <div style="height: 100px !important">
-                <div class="d-flex justify-end pr-10 pt-6">
-                  <div>
-                    <v-img src="/svg/play.svg" height="35px" width="35px" />
-                  </div>
-                </div>
-                <div>
-                  <p>My family remain my Covid-19 Hero</p>
-                </div>
+                Your browser does not support HTML video.
+              </video>
+              <div class="d-flex justify-center text-center">
+                <span class="airbnb-bold text-center text-15 white--text"
+                  >How I got infected in a hair salon</span
+                >
               </div>
             </div>
           </v-col>
@@ -630,7 +499,7 @@
         <button class="more-videos btn">Load more videos</button>
       </div>
     </section>
-  </main>
+  </div>
 </template>
 
 <script>
@@ -659,7 +528,7 @@ export default {
       if (this.$vuetify.breakpoint.smAndDown) {
         return 'fill-width'
       } else {
-        return 'width-60'
+        return 'width-50'
       }
     },
     cardheight() {
@@ -669,11 +538,18 @@ export default {
         return 'home-tips-card'
       }
     },
-    hometips() {
+    tipsbg() {
       if (this.$vuetify.breakpoint.smAndDown) {
-        return 'home-tips-mobile'
+        return 'tips-bg-mobile'
       } else {
-        return 'home-tips'
+        return 'tips-bg'
+      }
+    },
+    hometopbg() {
+      if (this.$vuetify.breakpoint.smAndDown) {
+        return 'home-top-bg-mobile'
+      } else {
+        return 'home-top-bg'
       }
     },
     survivalstories() {
