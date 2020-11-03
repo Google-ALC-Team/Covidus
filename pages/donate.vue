@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <button class="py-2" id="button">
+      <button class="py-2" id="button" v-if="logged">
         <span id="button2"
           >Get Country Donation Link<img src="/svg/donation.svg" width="32px"
         /></span>

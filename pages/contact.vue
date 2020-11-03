@@ -378,8 +378,9 @@
             large
             color="primary"
             class="px-10 text-capitalize"
+            @click="sendDetails()"
           >
-            Submit Application
+            Submit Applications
           </v-btn>
         </div>
       </form>
@@ -437,10 +438,18 @@
         </v-col>
       </v-row>
     </div>
+    <loading :text="loadingText" :dialog="isloading" />
+    <notification
+      :text="notificationText"
+      :show="showNotification"
+      @close="closeNotification"
+    />
   </main>
 </template>
 
 <script>
+import Loading from '@/components/dialogs/loading'
+import Notification from '@/components/dialogs/notification'
 export default {
   head: {
     title: 'Contact us',
@@ -450,6 +459,37 @@ export default {
         href: '/css/contact.css',
       },
     ],
+  },
+  components: {
+    Loading,
+    Notification,
+  },
+  data: () => ({
+    country: '',
+    isloading: false,
+    loadingText: 'Please wait...',
+    showNotification: false,
+    notificationText: '',
+  }),
+  methods: {
+    closeNotification() {
+      setTimeout(() => {
+        this.showNotification = false
+        this.notificationText = ''
+      }, 2000)
+    },
+    sendDetails() {
+      this.isloading = true
+      this.loadingText = 'Submitting Please wait'
+
+      setTimeout(() => {
+        this.isloading = false
+        this.showNotification = true
+        this.notificationText =
+          'Your Details has been submitted successfully. Thank you'
+        this.closeNotification()
+      }, 5000)
+    },
   },
 }
 </script>

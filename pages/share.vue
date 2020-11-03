@@ -3,6 +3,7 @@
     <div class="content">
       <h1 class="airbnb-bold">
         Share Your Covid-19 Survival Story With the World.
+        <!-- {{ $store.state.localStorage.auth }} -->
       </h1>
       <p>
         Let the world learn from your survival stories. Share your covid-19
@@ -100,6 +101,7 @@
                         class="text-capitalize py-6"
                         depressed
                         block
+                        @click="uploadStory()"
                       >
                         <span class="airbnb-medium">Upload Story</span>
                       </v-btn>
@@ -112,13 +114,31 @@
         </v-row>
       </div>
     </div>
+    <loading :text="loadingText" :dialog="isloading" />
+    <notification
+      :text="notificationText"
+      :show="showNotification"
+      @close="closeNotification"
+    />
   </div>
 </template>
 
 <script>
+import Loading from '@/components/dialogs/loading'
+import Notification from '@/components/dialogs/notification'
+
 export default {
+  middleware: 'authenticated',
+  components: {
+    Loading,
+    Notification,
+  },
   data: () => ({
     country: '',
+    isloading: false,
+    loadingText: 'Please wait...',
+    showNotification: false,
+    notificationText: '',
   }),
   head: {
     title: 'Share Your Story',
@@ -133,6 +153,26 @@ export default {
         src: '/js/sharestory_script.js',
       },
     ],
+  },
+  methods: {
+    closeNotification() {
+      setTimeout(() => {
+        this.showNotification = false
+        this.notificationText = ''
+      }, 2000)
+    },
+    uploadStory() {
+      this.isloading = true
+      this.loadingText = 'Uploading Video Please wait'
+
+      setTimeout(() => {
+        this.isloading = false
+        this.showNotification = true
+        this.notificationText = 'Uploaded Successfully'
+        this.closeNotification()
+        this.$router.push({ path: '/' })
+      }, 5000)
+    },
   },
   computed: {
     small() {

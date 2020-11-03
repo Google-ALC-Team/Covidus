@@ -9,10 +9,13 @@
             <div :class="`${leftcontent}`">
               <div class="d-flex justify-center px-10 px-sm-16 px-md-0">
                 <div class="pl-5">
-                  <span :class="`airbnb-black text-30 primary--text`"
-                    >Covid-19 Travelling <br />
-                    Guide App</span
+                  <span
+                    :class="`airbnb-black text-30 primary--text text-capitalize`"
                   >
+                    <!-- {{ homeData.title }} -->
+                    Covid-19 Travelling <br />
+                    Guide App
+                  </span>
 
                   <p class="airbnb-light text-15 white--text pt-2 pt-md-4">
                     An information platform that helps international travellers
@@ -472,7 +475,33 @@
 
       <section class="fill-width">
         <v-row>
-          <v-col cols="12" md="4" sm="6" v-for="n in 9" :key="n">
+          <v-col v-if="$store.state.localStorage.auth">
+            <div class="pa-5">
+              <video width="100%" controls>
+                <source src="/video/i-wear-a-mask.mp4" type="video/mp4" />
+                Your browser does not support HTML video
+              </video>
+              <div class="d-flex justify-center text-center">
+                <span class="airbnb-bold text-center text-25 white--text">
+                  I Wear A Mask
+                </span>
+              </div>
+            </div>
+          </v-col>
+          <v-col v-for="item in homeData.videos" :key="item">
+            <div class="pa-5">
+              <video width="100%" controls>
+                <source :src="`${item.filePath}`" type="video/mp4" />
+                Your browser does not support HTML video
+              </video>
+              <div class="d-flex justify-center text-center">
+                <span class="airbnb-bold text-center text-15 white--text">{{
+                  item.title
+                }}</span>
+              </div>
+            </div>
+          </v-col>
+          <!-- <v-col cols="12" md="4" sm="6" v-for="n in 9" :key="n">
             <div class="pa-5">
               <video width="100%" controls>
                 <source
@@ -492,7 +521,7 @@
                 >
               </div>
             </div>
-          </v-col>
+          </v-col> -->
         </v-row>
       </section>
       <div class="d-flex justify-end pb-12 pr-7">
@@ -505,7 +534,7 @@
 <script>
 export default {
   head: {
-    title: 'Contact us',
+    title: 'Home',
     link: [
       {
         rel: 'stylesheet',
@@ -513,6 +542,10 @@ export default {
       },
     ],
   },
+  data: () => ({
+    apiURL: '',
+    homeData: '',
+  }),
   computed: {
     small() {
       return this.$vuetify.breakpoint.smAndDown
@@ -559,6 +592,32 @@ export default {
         return 'survival-stories survival-bg'
       }
     },
+  },
+  methods: {
+    getHomepageData() {
+      this.$axios
+        .get(
+          this.apiURL,
+          {},
+          {
+            headers: {
+              'content-type': 'application/json',
+            },
+            timeout: 30000,
+          }
+        )
+        .then((response) => {
+          //  this.loadingDialog = false;
+          this.homeData = response.data
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    },
+  },
+  mounted() {
+    this.apiURL = this.$store.state.api.apiURL
+    this.getHomepageData()
   },
 }
 </script>
