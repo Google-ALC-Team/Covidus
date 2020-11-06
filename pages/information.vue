@@ -23,6 +23,7 @@
                   filled
                   outlined
                   single-line
+                  v-model="search"
                   class="mt-2"
                   type="search"
                   name="Search"
@@ -160,46 +161,28 @@ export default {
     tabledata: [
       {
         sn: '1',
-        country: 'Ghana',
-        continent: 'Africa',
-        airport: 'Doloremque dicta aliquam laudantium',
-        covidtest: '28 days',
-        pcrfee: '$150 per passenger',
-        link: 'https://bit.ly/34k8mtl',
-      },
-      {
-        sn: '2',
         country: 'Nigeria',
         continent: 'Africa',
-        airport: 'Doloremque dicta aliquam laudantium',
-        covidtest: '28 days',
-        pcrfee: '$150 per passenger',
-        link: 'https://bit.ly/34k8mtl',
-      },
-      {
-        sn: '3',
-        country: 'Liberia',
-        continent: 'Africa',
-        airport: 'Doloremque dicta aliquam laudantium',
-        covidtest: '28 days',
-        pcrfee: '$150 per passenger',
-        link: 'https://bit.ly/34k8mtl',
+        airport: 'Muritala Mohammed International Airport.',
+        covidtest: '5 days',
+        pcrfee: '$131.62',
+        link: 'https://nitp.ncdc.gov.ng/onboarding/guidelines',
       },
     ],
   }),
   mounted() {
-    let i = 0
-    for (i = 0; i < 10; i++) {
-      this.tabledata.push({
-        sn: i + 4,
-        country: 'Cameroon',
-        continent: 'Africa',
-        airport: 'Doloremque dicta aliquam laudantium',
-        covidtest: '28 days',
-        pcrfee: '$150 per passenger',
-        link: 'https://bit.ly/34k8mtl',
-      })
-    }
+    // let i = 0
+    // for (i = 0; i < 10; i++) {
+    //   this.tabledata.push({
+    //     sn: i + 4,
+    //     country: 'Cameroon',
+    //     continent: 'Africa',
+    //     airport: 'Doloremque dicta aliquam laudantium',
+    //     covidtest: '28 days',
+    //     pcrfee: '$150 per passenger',
+    //     link: 'https://bit.ly/34k8mtl',
+    //   })
+    // }
   },
 }
 </script>
