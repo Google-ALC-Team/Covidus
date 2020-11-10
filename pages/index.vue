@@ -12,9 +12,9 @@
                   <span
                     :class="`airbnb-black text-30 primary--text text-capitalize`"
                   >
-                    <!-- {{ homeData.title }} -->
-                    Covid-19 Travelling <br />
-                    Guide App
+                    {{ homeData.title }}
+                    <!-- Covid-19 Travelling <br />
+                    Guide App -->
                   </span>
 
                   <p class="airbnb-light text-15 white--text pt-2 pt-md-4">
@@ -475,7 +475,7 @@
 
       <section class="fill-width">
         <v-row>
-          <v-col v-if="$store.state.localStorage.auth">
+          <!-- <v-col v-if="$store.state.localStorage.auth">
             <div class="pa-5">
               <video width="100%" controls>
                 <source src="/video/i-wear-a-mask.mp4" type="video/mp4" />
@@ -487,11 +487,18 @@
                 </span>
               </div>
             </div>
-          </v-col>
-          <v-col v-for="item in homeData.videos" :key="item">
+          </v-col> -->
+
+          <v-col
+            v-for="item in homeData.data"
+            :key="item"
+            cols="12"
+            sm="6"
+            md="4"
+          >
             <div class="pa-5">
-              <video width="100%" controls>
-                <source :src="`${item.filePath}`" type="video/mp4" />
+              <video volume width="100%" height="100%" loop controls>
+                <source :src="`${item.videoUrl}`" type="video/mp4" />
                 Your browser does not support HTML video
               </video>
               <div class="d-flex justify-center text-center">
@@ -595,9 +602,10 @@ export default {
   },
   methods: {
     getHomepageData() {
+      const URL = this.apiURL + '/getVideos'
       this.$axios
         .get(
-          this.apiURL,
+          URL,
           {},
           {
             headers: {
@@ -608,7 +616,7 @@ export default {
         )
         .then((response) => {
           //  this.loadingDialog = false;
-          this.homeData = response.data
+          this.homeData = response.data.data
         })
         .catch((error) => {
           console.log(error)
